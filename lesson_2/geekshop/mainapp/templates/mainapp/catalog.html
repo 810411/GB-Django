@@ -10,7 +10,7 @@
                     <a href="">
                         <img src="{% static item.href%}" alt="{{ item.alt }}">
                         <br>
-                        <span>{{ item.name }}</span>
+                        <span>{{ item.name|capfirst }}</span>
                     </a>
                 </p>
             {% endfor %}
