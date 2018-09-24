@@ -1,7 +1,40 @@
 body {
+    font-family: "Roboto", Arial, sans-serif;
     background: #f8f8f8;
     color: black;
-    margin: 0;
+}
+
+h1, h2, h3 {
+    font-weight: 400;
+    font-variant: small-caps;
+    padding-left: 25px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+    line-height: 40px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.6em;
+}
+
+h3 {
+    font-size: 1.4em;
+    text-align: left;
+}
+
+.products h3 {
+    font-size: 18px;
+    background-color: #eaeaea;
+}
+
+p {
+    text-align: justify;
+    padding: 0 20px;
+    line-height: 1.5em;
 }
 
 .container {
@@ -37,7 +70,7 @@ header img {
 header nav ul {
     display: inline-block;
     float: right;
-    margin: 0 15px 0 0;
+    margin: -2px 15px 0 0;
 }
 
 header nav ul li {
@@ -45,7 +78,6 @@ header nav ul li {
     list-style: none;
     display: inline-block;
     margin-right: 5px;
-    height: 40px;
     width: 120px;
     border: 1px solid #CB1242;
     box-shadow: 4px 4px 8px -3px #A5A5A5;
@@ -60,10 +92,6 @@ header nav ul li a {
     font-size: 1.3em;
 }
 
-#selected {
-    border: 2px solid #CB1242;
-}
-
 header nav ul li:active {
     box-shadow: none;
 }
@@ -76,39 +104,12 @@ header nav ul li a:hover {
     color: #CB1242;
 }
 
+.selected {
+    border: 2px solid #CB1242;
+}
+
 section {
     margin-top: 100px;
-}
-
-h1, h2, h3 {
-    font-weight: 400;
-    font-variant: small-caps;
-    padding-left: 25px;
-    text-align: center;
-}
-
-h1 {
-    font-size: 2em;
-    line-height: 40px;
-    margin-bottom: 20px;
-}
-
-h2 {
-    font-size: 1.6em;
-}
-
-h3 {
-    font-size: 1.4em;
-    text-align: left;
-}
-
-.products h3 {
-    font-size: 18px;
-    background-color: #eaeaea;
-}
-
-p {
-    text-align: justify;
 }
 
 section p:first-letter {
@@ -132,6 +133,8 @@ section p:first-letter {
     width: 20%;
     float: left;
     margin-right: 5%;
+    padding: 0;
+    line-height: 1.1em;
     outline: 1px solid #CB1242;
     box-shadow: 4px 4px 8px -3px #A5A5A5;
     text-align: center;
@@ -212,7 +215,7 @@ section p:first-letter {
 .contact form {
     float: right;
     width: 700px;
-    margin: 0 20px 20px 0;
+    margin: 0 20px 10px 0;
 }
 
 .contact fieldset legend {
@@ -269,6 +272,10 @@ section p:first-letter {
     resize: none;
     float: left;
     padding-bottom: 5px;
+}
+
+.address {
+    padding-left: 20px;
 }
 
 button {

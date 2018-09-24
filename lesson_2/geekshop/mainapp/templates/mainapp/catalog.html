@@ -1,0 +1,19 @@
+{% extends 'mainapp/master.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <section>
+        <h1>Каталог</h1>
+        <div class="block">
+            {% for item in storegrid %}
+                <p class="storegrid">
+                    <a href="">
+                        <img src="{% static item.href%}" alt="{{ item.alt }}">
+                        <br>
+                        <span>{{ item.name }}</span>
+                    </a>
+                </p>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
