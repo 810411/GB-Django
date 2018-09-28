@@ -1,5 +1,5 @@
 from django.shortcuts import render
-import json
+from .models import ProductCategory, Product
 
 # Create your views here.
 links_menu = [
@@ -10,6 +10,7 @@ links_menu = [
 
 
 def main(request):
+    products = Product.objects.all()[:4]
     content = {
         'title': 'главная',
         'links_menu': links_menu,
@@ -18,14 +19,11 @@ def main(request):
 
 
 def catalog(request):
-    storegrid = []
-    json_data = open('mainapp/static/database/data.json', encoding='utf-8')
-    storegrid = json.load(json_data)
-
+    products = Product.objects.all()[:4]
     content = {
-        'title': 'каталог',
+        'title': 'главная',
         'links_menu': links_menu,
-        'storegrid': storegrid
+        'products': products,
     }
     return render(request, 'mainapp/catalog.html', content)
 

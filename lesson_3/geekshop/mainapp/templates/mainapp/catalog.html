@@ -5,12 +5,12 @@
     <section>
         <h1>Каталог</h1>
         <div class="block">
-            {% for item in storegrid %}
+            {% for product in products %}
                 <p class="storegrid">
                     <a href="">
-                        <img src="{% static item.href%}" alt="{{ item.alt }}">
+                        <img src="/media/{{ product.image }}" alt="{{ product.short_desc }}">
                         <br>
-                        <span>{{ item.name|capfirst }}</span>
+                        <span>{{ product.name|capfirst }}</span>
                     </a>
                 </p>
             {% endfor %}
