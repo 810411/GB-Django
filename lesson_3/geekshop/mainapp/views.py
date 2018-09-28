@@ -10,7 +10,6 @@ links_menu = [
 
 
 def main(request):
-    products = Product.objects.all()[:4]
     content = {
         'title': 'главная',
         'links_menu': links_menu,
@@ -19,7 +18,7 @@ def main(request):
 
 
 def catalog(request):
-    products = Product.objects.all()[:4]
+    products = Product.objects.all()
     content = {
         'title': 'главная',
         'links_menu': links_menu,
