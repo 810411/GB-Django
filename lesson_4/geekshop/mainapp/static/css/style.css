@@ -332,6 +332,59 @@ footer p {
     margin-top: 20px;
 }
 
+.auth {
+    width: 400px;
+    margin: 20px auto;
+    border: 2px solid #CB1242;
+    box-shadow: 4px 4px 8px -3px #A5A5A5;
+    padding: 50px;
+}
+
+.auth label {
+    font-size: 1.2em;
+}
+
+.auth .errorlist {
+    padding: 0;
+}
+
+.auth .errorlist li{
+    list-style: none;
+    font-size: 0.8em;
+    text-align: center;
+    color: #CB1242;
+}
+
+.auth button, .button {
+    float: none;
+    height: 40px;
+    width: 150px;
+    margin: 10px 125px;
+    font-variant: small-caps;
+    font-size: 1.3em;
+}
+
+.auth p {
+    text-align: center;
+}
+
+.auth input {
+    background-color: #fcfcfc;
+    width: 100%;
+    height: 30px;
+    border: 1px solid #484343;
+    box-shadow: 4px 4px 8px -3px #A5A5A5 inset;
+    padding-top: 4px;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.auth .user_image {
+    text-align: center;
+    max-height: 200px;
+}
+
 @media screen and (min-width: 500px) {
   html {
     margin-left: calc(100vw - 100%);

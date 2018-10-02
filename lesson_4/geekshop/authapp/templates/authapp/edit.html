@@ -3,16 +3,17 @@
 {% load staticfiles %}
 
 {% block content %}
+    <h2>Редактирование профиля</h2>
     <form class="" action="{% url 'auth:edit' %}" method="post"
           enctype="multipart/form-data">
         {% csrf_token %}
         {{ edit_form.as_p }}
-        <input class="" type="submit" value="сохранить">
+        <button>Cохранить</button>
     </form>
     <button class="">
         <a href="{% url 'main' %}" class="">
             на главную
         </a>
     </button>
-    <div class=""><img src="/media/{{ user.avatar }}"></div>
+    <div class="user_image"><img src="/media/{{ user.avatar }}"></div>
 {% endblock %}

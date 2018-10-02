@@ -3,16 +3,17 @@
 {% load staticfiles %}
 
 {% block content %}
-    <form class="" action="{% url 'auth:login' %}" method="post">
+    <h2>Вход в систему</h2>
+    <form action="{% url 'auth:login' %}" method="post">
         {% csrf_token %}
         {{ login_form.as_p }}
         <br>
-        <input class="" type="submit" value="войти">
+        <button>Войти</button>
     </form>
 
-    <button class="">
+    <button>
     <a href="{% url 'auth:register' %}" class="">
-        зарегистрироваться
+        Регистрация
     </a>
     </button>
 
