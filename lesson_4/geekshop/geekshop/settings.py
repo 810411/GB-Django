@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 	'mainapp',
+    'authapp',
 ]
 
 MIDDLEWARE = [
@@ -82,6 +83,11 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+
+# Authuser
+
+AUTH_USER_MODEL = 'authapp.ShopUser'
 
 
 # Password validation
