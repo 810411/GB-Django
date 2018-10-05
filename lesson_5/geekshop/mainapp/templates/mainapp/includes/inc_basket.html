@@ -1,7 +1,5 @@
 <span class="basket">
     <a href="{% url 'basket:view' %}">
-        <span>
-            {% if basket %} {{ basket|length }} {% endif %}
-        </span>
+        {% if basket %} {{ product_in_basket }} {% endif %}
     </a>
 </span>
