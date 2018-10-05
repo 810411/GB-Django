@@ -3,11 +3,15 @@
 
 {% block content %}
     <section>
-        <h1>Каталог</h1>
+
+        <h1>Каталог товаров</h1>
+
+        {% include 'mainapp/includes/inc_categories_menu.html' %}
+
         <div class="block">
             {% for product in products %}
                 <p class="storegrid">
-                    <a href="">
+                    <a href="{% url 'product' product.pk %}">
                         <img src="/media/{{ product.image }}" alt="{{ product.short_desc }}">
                         <br>
                         <span>{{ product.name|capfirst }}</span>
@@ -17,3 +21,5 @@
         </div>
     </section>
 {% endblock %}
+
+

@@ -11,7 +11,7 @@
     {% if user.is_authenticated %}
         <li>
             <a href="{% url 'auth:edit' %}">
-                {{ user.first_name|default:'Пользователь' }}
+                &#9786;{{ user.first_name|default:'Пользователь' }}
             </a>
         </li>
     {% endif %}

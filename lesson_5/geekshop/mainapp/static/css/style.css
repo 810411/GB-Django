@@ -104,6 +104,31 @@ header nav ul li a:hover {
     color: #CB1242;
 }
 
+.links-menu {
+    text-align: right;
+    margin-right: 20px;
+}
+
+.links-menu li {
+    display: inline;
+    list-style: none;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    margin-left: 20px;
+}
+
+.links-menu li:first-child {
+    font-size: 0.8em;
+}
+
+.links-menu li a:hover {
+    color: #CB1242;
+}
+
+.links-menu li .active {
+    border-bottom: 2px solid #CB1242;
+}
+
 .selected {
     border: 2px solid #CB1242;
 }
@@ -131,6 +156,7 @@ section p:first-letter {
 
 .storegrid {
     width: 20%;
+    height: 320px;
     float: left;
     margin-right: 5%;
     padding: 0;
@@ -178,38 +204,50 @@ section p:first-letter {
     text-align: left;
 }
 
-.products .content ul {
+.products ul {
     list-style:none;
     color:  #484343;
     font-size: 18px;
     line-height: 28px;
 }
 
-.products .content li:before {
+.products li:before {
     content: "🕮";
     margin-right: 1em;
     color: #CB1242;
 }
 
-.products .content img {
+.img-container {
+    float: left;
     width: 200px;
     height: 300px;
+    margin: 0 20px 20px 20px;
+}
+
+.products img {
+    width: 100%;
     border: 1px solid #CB1242;
     box-shadow: 4px 4px 8px -3px #A5A5A5;
 }
 
-.products .content a:hover img{
+.products img:hover {
     border: 1px solid transparent;
 }
 
-.products .content a:active img{
+.products img:active {
     box-shadow: none;
 }
 
-.products .content a {
-    float: right;
-    width: 20%;
-    margin: 0 20px 20px 20px;
+.img-block:after,
+.img-block:before {
+    content: '';
+    clear: both;
+}
+
+.price {
+    color: #05607E;
+    font-size: 1.2em;
+    font-weight: 600;
 }
 
 .contact form {
@@ -292,10 +330,10 @@ button {
 }
 
 .products button {
-    float: left;
+    float: none;
     height: 40px;
     width: 120px;
-    margin: 0 0 0 20px;
+    margin: 10px 30px;
     font-variant: small-caps;
     font-size: 1.3em;
 }
@@ -306,6 +344,10 @@ button:active {
 
 button:focus {
     outline: none;
+}
+
+button:hover {
+    background-color: white;
 }
 
 #map {
