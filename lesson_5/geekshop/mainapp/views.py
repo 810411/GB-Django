@@ -57,10 +57,12 @@ def catalog(request, pk=None):
 def product(request, pk=None):
     basket = []
     product_in_basket = 0
+    total_price = 0
     if request.user.is_authenticated:
         basket = Basket.objects.filter(user=request.user)
         for item in basket:
             product_in_basket += item.quantity
+            total_price += item.product.price * item.quantity
 
     title = get_object_or_404(Product, id=pk).name
     product_ = get_object_or_404(Product, id=pk)
@@ -70,6 +72,7 @@ def product(request, pk=None):
         'product': product_,
         'basket': basket,
         'product_in_basket': product_in_basket,
+        'total_price': total_price,
     }
 
     return render(request, 'mainapp/product.html', content)

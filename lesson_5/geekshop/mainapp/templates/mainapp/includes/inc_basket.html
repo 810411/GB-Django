@@ -1,5 +1,7 @@
 <span class="basket">
+    Товаров в корзине:
     <a href="{% url 'basket:view' %}">
         {% if basket %} {{ product_in_basket }} {% endif %}
     </a>
+    общей стоимостью:{% if basket %} Q{{ total_price }} {% endif %}
 </span>
