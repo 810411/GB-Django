@@ -17,7 +17,7 @@
         <div class="block">
             {% for product in hot_product %}
                 <p class="storegrid">
-                    <a href="{% url 'catalog' %}"><img src="/media/{{ product.image }}" alt=""></a>
+                    <a href="{% url 'product' product.pk %}"><img src="/media/{{ product.image }}" alt=""></a>
                     <br>
                     <span>{{ product.name|capfirst }}</span>
                 </p>

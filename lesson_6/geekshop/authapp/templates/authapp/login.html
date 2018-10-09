@@ -6,6 +6,9 @@
     <h2>Вход в систему</h2>
     <form action="{% url 'auth:login' %}" method="post">
         {% csrf_token %}
+        {% if next %}
+            <input type="hidden" name="next" value="{{ next }}">
+        {% endif %}
         {{ login_form.as_p }}
         <br>
         <button>Войти</button>
