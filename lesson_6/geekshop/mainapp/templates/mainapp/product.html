@@ -3,6 +3,9 @@
 
 {% block content %}
     <section class="products">
+        <div class="basket-notice">
+            {% include 'mainapp/includes/inc_basket.html' %}
+        </div>
         <h1>{{ product.name|capfirst }}</h1>
         <h3>Автор: <em>{{ product.author|capfirst }}</em></h3>
         <div class="img-block">
@@ -16,9 +19,6 @@
             <form action="{% url 'basket:add' product.pk %}">
                 <button>Купить</button>
             </form>
-            <p id="shortdesc">
-                {% include 'mainapp/includes/inc_basket.html' %}
-            </p>
         </div>
         <h3 class="stub">Характеристики:</h3>
         <ul>

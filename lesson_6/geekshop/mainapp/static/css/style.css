@@ -238,8 +238,13 @@ section p:first-letter {
     box-shadow: none;
 }
 
+.img-block {
+    box-sizing: border-box;
+}
+
 .img-block:after,
 .img-block:before {
+    display: table;
     content: '';
     clear: both;
 }
@@ -357,6 +362,58 @@ button:hover {
 
 .stub {
     clear:both;
+}
+
+.basket-notice {
+    box-sizing: border-box;
+    text-align: right;
+}
+
+.basket-notice span {
+    color: #05607E;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.basket-notice span a {
+    color: #05607E;
+}
+
+.basket-notice span a:hover {
+    color: #CB1242;
+}
+
+.basket_list .img-block .img-container {
+    height: 150px;
+    width: 100px;
+}
+
+.basket_list .img-block:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.basket_list input {
+    background-color: #f8f8f8;
+    width: 60px;
+    border: none;
+    text-align: center;
+}
+
+.basket-total {
+    box-sizing: border-box;
+    text-align: center;
+     margin: 20px auto;
+}
+
+.basket-total button {
+    float: none;
+    height: 40px;
+    width: 150px;
+    margin: 10px 125px;
+    font-variant: small-caps;
+    font-size: 1.3em;
 }
 
 footer {

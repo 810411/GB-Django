@@ -3,26 +3,41 @@ from django.shortcuts import render
 from basketapp.models import Basket
 from .models import ProductCategory, Product
 from django.shortcuts import get_object_or_404
+import random
 
 # Create your views here.
 links_menu = [
     {'href': 'main', 'name': 'главная'},
-    {'href': 'catalog', 'name': 'каталог'},
+    {'href': 'catalog', 'name': 'магазин'},
     {'href': 'contact', 'name': 'контакты'},
 ]
 
+def getBasket(user):
+    if user.is_authenticated:
+        return Basket.objects.filter(user=user)
+    else:
+        return []
+
+
+def getHotProduct():
+    products = Product.objects.all()
+    return random.sample(list(products), 4)
+
 
 def main(request):
+    hot_product = getHotProduct()
     content = {
         'title': 'главная',
         'links_menu': links_menu,
+        'hot_product': hot_product,
     }
     return render(request, 'mainapp/index.html', content)
 
 
 def catalog(request, pk=None):
-    title = 'каталог'
+    title = 'магазин'
     catalog_menu = ProductCategory.objects.all()
+    basket = getBasket(request.user)
 
     if pk:
         if pk == '0':
@@ -50,20 +65,13 @@ def catalog(request, pk=None):
         'catalog_menu': catalog_menu,
         'products': products,
         'category': {'name': 'все'},
+        'basket': basket,
     }
     return render(request, 'mainapp/catalog.html', content)
 
 
 def product(request, pk=None):
-    basket = []
-    product_in_basket = 0
-    total_price = 0
-    if request.user.is_authenticated:
-        basket = Basket.objects.filter(user=request.user)
-        for item in basket:
-            product_in_basket += item.quantity
-            total_price += item.product.price * item.quantity
-
+    basket = getBasket(request.user)
     title = get_object_or_404(Product, id=pk).name
     product_ = get_object_or_404(Product, id=pk)
     content = {
@@ -71,8 +79,6 @@ def product(request, pk=None):
         'links_menu': links_menu,
         'product': product_,
         'basket': basket,
-        'product_in_basket': product_in_basket,
-        'total_price': total_price,
     }
 
     return render(request, 'mainapp/product.html', content)
