@@ -71,6 +71,7 @@ header nav ul {
     display: inline-block;
     float: right;
     margin: -2px 15px 0 0;
+    padding-left: 20px;
 }
 
 header nav ul li {
@@ -78,7 +79,7 @@ header nav ul li {
     list-style: none;
     display: inline-block;
     margin-right: 5px;
-    width: 120px;
+    width: 110px;
     border: 1px solid #CB1242;
     box-shadow: 4px 4px 8px -3px #A5A5A5;
 }
@@ -89,7 +90,7 @@ header nav ul li a {
     line-height: 40px;
     text-align: center;
     font-variant: small-caps;
-    font-size: 1.3em;
+    font-size: 1.1em;
 }
 
 header nav ul li:active {
