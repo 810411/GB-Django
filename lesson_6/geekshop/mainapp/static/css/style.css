@@ -395,8 +395,10 @@ button:hover {
 }
 
 .basket_list input {
-    background-color: #f8f8f8;
+    margin-left: 10px;
+    background-color: #eaeaea;
     width: 60px;
+    font-size: 1.2em;
     border: none;
     text-align: center;
 }
@@ -404,7 +406,7 @@ button:hover {
 .basket-total {
     box-sizing: border-box;
     text-align: center;
-     margin: 20px auto;
+    margin: 20px auto;
 }
 
 .basket-total button {
