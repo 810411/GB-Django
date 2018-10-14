@@ -3,7 +3,7 @@ import adminapp.views as adminapp
 
 urlpatterns = [
     path('users/create/', adminapp.user_create, name='user_create'),
-    path('users/read/', adminapp.users, name='users'),
+    path('users/read/', adminapp.UsersListView.as_view(), name='users'),
     path('users/update/<pk>/', adminapp.user_update, name='user_update'),
     path('users/delete/<pk>/', adminapp.user_delete, name='user_delete'),
     path('categories/create/', adminapp.category_create, name='category_create'),

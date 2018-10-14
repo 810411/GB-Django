@@ -6,17 +6,28 @@ from django.urls import reverse
 from authapp.forms import ShopUserRegisterForm
 from adminapp.forms import ShopUserAdminEditForm
 from adminapp.forms import ProductEditForm
+from django.views.generic.list import ListView
+from django.utils.decorators import method_decorator
 
 
-@user_passes_test(lambda u: u.is_superuser)
-def users(request):
-    title = 'админка/пользователи'
-    users_list = ShopUser.objects.all().order_by('-is_active', '-is_superuser', '-is_staff', 'username')
-    content = {
-        'title': title,
-        'objects': users_list
-    }
-    return render(request, 'adminapp/users.html', content)
+class UsersListView(ListView):
+    model = ShopUser
+    template_name = 'adminapp/users.html'
+
+    @method_decorator(user_passes_test(lambda u: u.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super(UsersListView, self).dispatch(*args, **kwargs)
+
+
+# @user_passes_test(lambda u: u.is_superuser)
+# def users(request):
+#     title = 'админка/пользователи'
+#     users_list = ShopUser.objects.all().order_by('-is_active', '-is_superuser', '-is_staff', 'username')
+#     content = {
+#         'title': title,
+#         'objects': users_list
+#     }
+#     return render(request, 'adminapp/users.html', content)
 
 
 def user_create(request):
