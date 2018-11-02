@@ -1,0 +1,35 @@
+{% extends 'mainapp/master.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <section>
+        <div class="basket-notice">
+            <span>
+                <a href="{% url 'basket:view' %}">
+                    &#128722; Ваши покупки
+                </a>
+            </span>
+        </div>
+        <h1>Бестселлеры O'Reilly</h1>
+        <h2>Добро пожаловать в мир книг издательства O'Reilly</h2>
+        <p>
+            O'Reilly — одно из крупнейших издательств — начало свою деятельность в 1984 году
+            с создания руководств для вендоров операционной системы Unix. На сегодняшний день ассортимент
+            наименований этого издательства весьма широк: от книг для любителей цифровой фотографии до изданий,
+            предназначенных профессиональным разработчикам программного обеспечения. Книги издательства O'Reilly
+            отличаются достоверностью, полезны и интересны.
+        </p>
+
+        <h2>Горячие предложения</h2>
+        <div class="block">
+            {% for product in hot_product %}
+                <p class="storegrid">
+                    <a href="{% url 'product' product.pk %}"><img src="/media/{{ product.image }}" alt=""></a>
+                    <br>
+                    <span>{{ product.name|capfirst }}</span>
+                </p>
+            {% endfor %}
+        </div>
+
+    </section>
+{% endblock %}

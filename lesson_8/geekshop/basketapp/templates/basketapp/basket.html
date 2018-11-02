@@ -1,0 +1,12 @@
+{% extends 'basketapp/master.html' %}
+{% load staticfiles %}
+{% block content %}
+    <div class="basket_list products">
+        {% include 'basketapp/includes/inc_basket_list.html' %}
+    </div>
+    <div class="basket-total">
+        <button>
+            <a href="{% url 'main' %}">на главную</a>
+        </button>
+    </div>
+{% endblock %}

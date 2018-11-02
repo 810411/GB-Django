@@ -1,0 +1,9 @@
+<span>
+    {% if basket %}
+        <a href="{% url 'basket:view' %}">
+        &#128722;
+        Товаров в корзине: {{ basket.0.total_quantity }}
+        общей стоимостью: Q{{ basket.0.total_cost|floatformat:2 }}
+        </a>
+    {% endif %}
+</span>
